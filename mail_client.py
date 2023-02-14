@@ -33,18 +33,39 @@ def send_mail(recipient: str, sender: str, subject: str, body: str) -> bool:
 
 def get_inbox(recipient: str) -> None:
     """TODO: fill out this docstring (using the send_mail docstring as a guide)
+     Gets a mail entry from the server
+    
+    Args:
+        -u [USER]: either the sender or recipient of who's inbox wants to be viewed
+
+    Returns:
+        bool: True if the request was sent successfully, False otherwise
     """
     response = requests.get(f'{SERVER}/mail/inbox/{recipient}')
     pprint.pprint(response.json())
 
 def get_sent(sender: str) -> None:
     """TODO: fill out this docstring (using the send_mail docstring as a guide)
+    Gets sent mail entries from the server
+    
+    Args:
+        -u [USER]: either the sender or recipient of who's sent mail wants to be viewed
+
+    Returns:
+        bool: True if the request was sent successfully, False otherwise
     """
     response = requests.get(f'{SERVER}/mail/sent/{sender}')
     pprint.pprint(response.json())
 
 def get_mail(mail_id: str) -> None:
     """TODO: fill out this docstring (using the send_mail docstring as a guide)
+    Gets a mail entry from the server
+    
+    Args:
+        mail id: unique code thats generated when the mail is sent
+
+    Returns:
+        bool: True if the request was sent successfully, False otherwise
     """
     response = requests.get(f'{SERVER}/mail/{mail_id}')
     pprint.pprint(response.json())
@@ -52,9 +73,13 @@ def get_mail(mail_id: str) -> None:
 def delete_mail(mail_id: str) -> None:
     """TODO: fill out this docstring (using the send_mail docstring as a guide)
     to delete a mail from mail id entry 
+    Deletes a mail entry from the server
     
+    Args:
+        mail id: unique code thats generated when the mail is sent
+
     return:
-        none
+        bool: True if deleted, false otherwise
     """
     response = requests.delete(f'{SERVER}/mail/{mail_id}')
     pprint.pprint(response.json())
