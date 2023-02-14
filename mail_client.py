@@ -51,6 +51,10 @@ def get_mail(mail_id: str) -> None:
 
 def delete_mail(mail_id: str) -> None:
     """TODO: fill out this docstring (using the send_mail docstring as a guide)
+    to delete a mail from mail id entry 
+    
+    return:
+        none
     """
     response = requests.delete(f'{SERVER}/mail/{mail_id}')
     pprint.pprint(response.json())
@@ -115,8 +119,9 @@ def main():
 # to run the code, open a terminal and type:
 #   python mail_client.py --help
 # For example, to send a mail, type:
-#   python mail_client.py send -t "recipient" -f "sender" -s "subject" "body"
+#   python3 mail_client.py send -t "recipient" -f "sender" -s "subject" "body"
 # you'll need to demo sending, receiving, and deleting mail for checkoff.
+
 if __name__ == '__main__':
     main()
 
