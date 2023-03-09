@@ -3,7 +3,7 @@
 
 ## Team Members
 - team member 1: Nayeli De Leon
-- team member 2 N/a
+- team member 2 N/a Testinging
 
 ## Lab Question Answers
 
